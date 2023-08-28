@@ -2,11 +2,15 @@
 library(readxl)
 library(dplyr)
 library(tidyverse)
+library(readr)
+library(purrr)
 
+data <- LittleRockArInformation
 DataTrans <- function(data) {
   datai <- as.numeric(data[row,])
   dataf <- append(dataf, datai)
   dataf <- dataf[!is.na(dataf)] 
+  return(dataf)
 }
 
 StateLst <- list('Al', 'Ak', 'Az', 'Ar', 'Ca', 'Co', 'Ct', 'De', 'Fl', 'Ga', 'Hi',
@@ -22,13 +26,20 @@ datalst <- list('TotalNonFarm', 'Manufacturing', 'TradeTransportationUtilities',
 
 employlst <- list('CivilianLaborForce', 'Employment', 'Unemployment', 'UnemploymentRt')
 
-state <- 'LittleRockAr'
-for (dl in datalst) {
-  do.call("<-",list(paste(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/", state, dl, ".xlsx"), skip = 11))))
-}
-for (dl in employlst) {
-    do.call("<-",list(paste(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/", state, dl, ".xlsx"), skip = 10))))
-  }
+# Incomplete data sets: Carson City Nv,
 
+statelst <- c('AlbanyNy', 'AtlantaGa', 'BatonRougeLa', 'BoiseId', 'BostonMaMetro', 'DenverCo',
+              'DesMoinesIa', 'LittleRockAr')
+for (state in statelst) {
+  for (dl in datalst) {
+    do.call("<-",list(paste0(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/", state, dl, ".xlsx"), skip = 11))))
+    }
+  for (dl in employlst) {
+      do.call("<-",list(paste0(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/", state, dl, ".xlsx"), skip = 10))))
+  }
+}
+
+
+ArInfoV <- c(t(AtlantaGaInformation[,-1]))
 
 
