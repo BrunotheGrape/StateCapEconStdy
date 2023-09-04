@@ -26,10 +26,15 @@ datalst <- list('TotalNonFarm', 'Manufacturing', 'TradeTransportationUtilities',
 
 employlst <- list('CivilianLaborForce', 'Employment', 'Unemployment', 'UnemploymentRt')
 
-# Incomplete data sets: Carson City Nv,
+# Incomplete data sets: Carson City Nv, Pierre SD, Jefferson City Mo, Montpelier Vt, Olympia Wa
 
-statelst <- c('AlbanyNy', 'AtlantaGa', 'BatonRougeLa', 'BoiseId', 'BostonMaMetro', 'DenverCo',
-              'DesMoinesIa', 'LittleRockAr')
+statelst <- c('AlbanyNy', 'AtlantaGa','AustinTx', 'BatonRougeLa', 'BismarkNd', 'BoiseId', 'BostonMaMetro', 'CharlestonWv'
+              ,'CheyenneWy', 'ColumbiaSc', 'ColumbusOh', 'DenverCo','DesMoinesIa', 'DoverDe', 'HarrisburgPa'
+              ,'DesMoinesIa', 'DoverDe', 'HarrisburgPa', 'HartfordCt', 'IndianapolisIn','JacksonMs'
+              ,'LansingMi','LincolnNe', 'LittleRockAr','MadisonWi', 'MinneapolisMn', 'MontgomeryAl'
+              ,'NashvilleTn', 'OklahomaCityOk', 'PhoenixAz', 'ProvidenceRi', 'RaleighNc', 'RichmondVa'
+              , 'SacramentoCa', 'SalemOr', 'SaltLakeCityUt', 'SantaFeNm', 'SpringfieldIl', 'TallahasseeFl'
+              ,'TopekaKs', 'TrentonNj')
 for (state in statelst) {
   for (dl in datalst) {
     do.call("<-",list(paste0(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/", state, dl, ".xlsx"), skip = 11))))
@@ -40,6 +45,6 @@ for (state in statelst) {
 }
 
 
-ArInfoV <- c(t(AtlantaGaInformation[,-1]))
+#AlbanyNyV <- c(t(AlbanyNyInformation[,-1]))
 
 
