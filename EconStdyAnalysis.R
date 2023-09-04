@@ -12,15 +12,24 @@ Res <- cor(LRARInfo,ANYInfo)
 
 
 CLF <- rbind(AlbanyNyCivilianLaborForce$Mar[11], AtlantaGaCivilianLaborForce$Mar[11]
-             ,AustinTxCivilianLaborForce$Mar[11]
-             ,BatonRougeLaCivilianLaborForce$Mar[11], BismarkNdCivilianLaborForce$Mar[11]
-             ,BoiseIdCivilianLaborForce$Mar[11], BostonMaMetroCivilianLaborForce$Mar[11]
-             ,ColumbiaScCivilianLaborForce$Mar[11], ColumbusOhCivilianLaborForce$Mar[11]
-             ,DenverCoCivilianLaborForce$Mar[11]
+             ,AustinTxCivilianLaborForce$Mar[11], BatonRougeLaCivilianLaborForce$Mar[11]
+             ,BismarkNdCivilianLaborForce$Mar[11], BoiseIdCivilianLaborForce$Mar[11]
+             ,BostonMaMetroCivilianLaborForce$Mar[11], CharlestonWvCivilianLaborForce$Mar[11]
+             ,CheyenneWyCivilianLaborForce$Mar[11], ColumbiaScCivilianLaborForce$Mar[11]
+             ,ColumbusOhCivilianLaborForce$Mar[11], DenverCoCivilianLaborForce$Mar[11]
              ,DesMoinesIaCivilianLaborForce$Mar[11], DoverDeCivilianLaborForce$Mar[11]
              ,HarrisburgPaCivilianLaborForce$Mar[11], HartfordCtCivilianLaborForce$Mar[11]
              ,IndianapolisInCivilianLaborForce$Mar[11], JacksonMsCivilianLaborForce$Mar[11]
-             ,LittleRockArCivilianLaborForce$Mar[11])
+             ,LansingMiCivilianLaborForce$Mar[11], LincolnNeCivilianLaborForce$Mar[11]
+             ,LittleRockArCivilianLaborForce$Mar[11], MadisonWiCivilianLaborForce$Mar[11]
+             ,MinneapolisMnCivilianLaborForce$Mar[11], MontgomeryAlCivilianLaborForce$Mar[11]
+             ,NashvilleTnCivilianLaborForce$Mar[11], OklahomaCityOkCivilianLaborForce$Mar[11]
+             ,PhoenixAzCivilianLaborForce$Mar[11], ProvidenceRiCivilianLaborForce$Mar[11]
+             ,RaleighNcCivilianLaborForce$Mar[11], RichmondVaCivilianLaborForce$Mar[11]
+             ,SacramentoCaCivilianLaborForce$Mar[11], SalemOrCivilianLaborForce$Mar[11]
+             ,SaltLakeCityUtCivilianLaborForce$Mar[11], SantaFeNmCivilianLaborForce$Mar[11]
+             ,SpringfieldIlCivilianLaborForce$Mar[11], TallahasseeFlCivilianLaborForce$Mar[11]
+             ,TopekaKsCivilianLaborForce$Mar[11], TrentonNjCivilianLaborForce$Mar[11])
 
 sumCLF <- summary(CLF)
 print(sumCLF)
