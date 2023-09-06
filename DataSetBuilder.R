@@ -22,3 +22,4 @@ for (sector in sector) {
   output <- c(t(get((paste0(noquote(region),noquote(sector))))[,-1]))
   SprgfldIl <- rbind(SprgfldIl, output)
 }
+SprgfldIl <- SprgfldIl[,1:125]
