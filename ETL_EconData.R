@@ -47,4 +47,15 @@ for (state in statelst) {
 
 #AlbanyNyV <- c(t(AlbanyNyInformation[,-1]))
 
+#Cohort data
+Chlst <- c('BirminghamAl','FayettevilleAr', 'HuntsvilleAl', 'TucsonAz')
+
+for (state in Chlst) {
+  for (dl in datalst) {
+    do.call("<-",list(paste0(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/cohorts/", state, dl, ".xlsx"), skip = 11))))
+  }
+  for (dl in employlst) {
+    do.call("<-",list(paste0(state,dl), data.frame(read_excel(paste0("~/Documents/Data_Science/Analytics/StateCapitalEcon/cohorts/", state, dl, ".xlsx"), skip = 10))))
+  }
+}
 
