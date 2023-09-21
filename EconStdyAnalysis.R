@@ -2,6 +2,8 @@
 
 #Use summary() to get the quartile data on the civilian work force and total nonfarm
 # look at excluding the governement sector.
+library(xts)
+
 
 LRARInfo <- c(t(LittleRockArInformation[,-1]))
 LRARInfo <- LRARInfo[1:125]
@@ -22,14 +24,21 @@ statelst <- c('AlbanyNy', 'AtlantaGa','AustinTx', 'BatonRougeLa', 'BismarkNd', '
               , 'SacramentoCa', 'SalemOr', 'SaltLakeCityUt', 'SantaFeNm', 'SpringfieldIl', 'TallahasseeFl'
               ,'TopekaKs', 'TrentonNj')
 sector <- c('CivilianLaborForce')
-DLF <- data.frame()
+CLF <- data.frame()
 for (state in statelst) {
   output <- c(t(get((paste0(noquote(state),noquote(sector))))$Mar[11]))
-  DLF <- rbind(DLF,output)
+  CLF <- rbind(CLF,output)
 }
 
 
 sumCLF <- summary(CLF)
 print(sumCLF)
-
+#write.csv(CLF,"CLF.csv")
 #Emp <- AlbanyNyCivilianLaborForce
+
+date <- seq(from = as.Date("2013/1/1"),
+            to = as.Date("2023/5/1"),
+            by = "month")
+  
+
+SprgfldIl.xts <- xts(SprgfldIl[1,1:125],date)
