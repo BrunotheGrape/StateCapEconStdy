@@ -33,12 +33,21 @@ for (state in statelst) {
 
 sumCLF <- summary(CLF)
 print(sumCLF)
-#write.csv(CLF,"CLF.csv")
-#Emp <- AlbanyNyCivilianLaborForce
 
-date <- seq(from = as.Date("2013/1/1"),
-            to = as.Date("2023/5/1"),
-            by = "month")
+
+#date <- seq(from = as.Date("2013/1/1"),
+#            to = as.Date("2023/5/1"),
+#            by = "month")
   
 
-SprgfldIl.xts <- xts(SprgfldIl[1,1:125],date)
+
+Sprgfldr1vect <- unname(unlist(SprgfldIl[1,]))
+SprgfldIl.ts <-ts(Sprgfldr1vect, start=c(2013, 1), end=c(2023, 1), frequency=12) 
+
+
+
+clfrcmn <- as.data.frame(lapply(CivLbrFrc, mean, na.rm = TRUE))
+
+clfrcmnvect <- unname(unlist(clfrcmn[1,]))
+clfrcmn.ts <- ts(clfrcmnvect, start=c(2013, 1), end=c(2023, 1), frequency=12) 
+
