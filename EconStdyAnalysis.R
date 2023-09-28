@@ -51,3 +51,7 @@ clfrcmn <- as.data.frame(lapply(CivLbrFrc, mean, na.rm = TRUE))
 clfrcmnvect <- unname(unlist(clfrcmn[1,]))
 clfrcmn.ts <- ts(clfrcmnvect, start=c(2013, 1), end=c(2023, 1), frequency=12) 
 
+clfrcmncohrt <- as.data.frame(lapply(CivLbrFrcCoHrt, mean, na.rm = TRUE))
+
+clfrcmncohrtvect <- unname(unlist(clfrcmncohrt[1,]))
+clfrcmncohrt.ts <- ts(clfrcmncohrtvect, start=c(2013, 1), end=c(2023, 1), frequency=12) 
