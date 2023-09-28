@@ -48,7 +48,8 @@ for (state in statelst) {
 #AlbanyNyV <- c(t(AlbanyNyInformation[,-1]))
 
 #Cohort data
-Chlst <- c('BirminghamAl','FayettevilleAr', 'HuntsvilleAl', 'TucsonAz')
+Chlst <- c('BakersfieldCa', 'BirminghamAl','BoulderCo', 'FayettevilleAr','FresnoCa', 'HuntsvilleAl','MemphisTn', 'ModestoCa', 'OxnardCa', 'SalinasCa'
+           , 'SantaBarbaraCa', 'SantaRosaCa','StocktonCa', 'TucsonAz', 'VisaliaCa')
 
 for (state in Chlst) {
   for (dl in datalst) {
