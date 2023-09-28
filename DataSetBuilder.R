@@ -46,7 +46,8 @@ for (state in statelst ) {
 }
 CivLbrFrc <- CivLbrFrc[,1:125]
 
-
+# Cohort Data Sets
+###### *********************************************
 CivLbrFrcCoHrt <-data.frame()
 
 for (state in Chlst ) {
