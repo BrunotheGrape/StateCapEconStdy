@@ -33,7 +33,7 @@ SprgfldIl <- SprgfldIl[,1:125]
 #                        ,TopekaKsInformation, TrentonNjInformation))
 
 
-
+######****** Civilian Labor Force *************
 sector <- c('CivilianLaborForce')
 
 
@@ -46,8 +46,9 @@ for (state in statelst ) {
 }
 CivLbrFrc <- CivLbrFrc[,1:125]
 
-# Cohort Data Sets
-###### *********************************************
+
+
+######****** Civilian Labor Force Cohort *************
 CivLbrFrcCoHrt <-data.frame()
 
 for (state in Chlst ) {
@@ -55,3 +56,83 @@ for (state in Chlst ) {
   CivLbrFrcCoHrt <- rbind(CivLbrFrcCoHrt, output)
 }
 CivLbrFrcCoHrt <- CivLbrFrcCoHrt[,1:125]
+
+######****** Unemployment Rate *************
+sector <- c('UnemploymentRt')
+
+UnEmpRt <- data.frame()
+
+
+for (state in statelst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  UnEmpRt <- rbind(UnEmpRt, output)
+}
+UnEmpRt <- UnEmpRt[,1:125]
+
+
+
+######****** Unemployment Rate Cohort *************
+UnEmpRtCoHrt <-data.frame()
+
+for (state in Chlst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  UnEmpRtCoHrt <- rbind(UnEmpRtCoHrt, output)
+}
+UnEmpRtCoHrt <- UnEmpRtCoHrt[,1:125]
+
+
+#**************Total Nonfarm *********************
+
+sector <- c('TotalNonFarm')
+
+TotNonFrm <- data.frame()
+
+
+for (state in statelst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  TotNonFrm <- rbind(TotNonFrm, output)
+}
+TotNonFrm <- TotNonFrm[,1:125]
+
+
+#**************Total Nonfarm Cohort *********************
+
+sector <- c('TotalNonFarm')
+
+TotNonFrmCoHrt <- data.frame()
+
+
+for (state in Chlst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  TotNonFrmCoHrt <- rbind(TotNonFrmCoHrt, output)
+}
+TotNonFrmCoHrt <- TotNonFrmCoHrt[,1:125]
+
+#**************Manufacturing *********************
+
+sector <- c('Manufacturing')
+
+Mnfct <- data.frame()
+
+
+for (state in statelst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  Mnfct <- rbind(Mnfct, output)
+}
+Mnfct <- Mnfct[,1:125]
+
+
+#**************Total Manufacturing Cohort *********************
+
+sector <- c('Manufacturing')
+
+MnfctCoHrt <- data.frame()
+
+
+for (state in Chlst ) {
+  output <- c(t(get((paste0(noquote(state),noquote(sector))))[,-1]))
+  MnfctCoHrt <- rbind(MnfctCoHrt, output)
+}
+MnfctCoHrt <- MnfctCoHrt[,1:125]
+
+
