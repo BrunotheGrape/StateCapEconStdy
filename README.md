@@ -6,7 +6,7 @@ Cohorts:
 The cohort list includes 58 USBLS economic zones.
 The size of the cohorts was determined by summarizing the Civilian Work Force size of all the capital cities in the study and locating the first and third quartile of the data. USBLS areas that fell between these two values were then included in as the cohorts. These locals are not evenly distributed geographically. 
 
-> print(sumCLF)
+> print(sumCivilianLaborForce)
     X459281       
  Min.   :  50592  
  1st Qu.: 204411  
